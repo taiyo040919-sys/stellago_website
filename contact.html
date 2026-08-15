@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>お問い合わせ | ステラーゴ網干SC U-15</title>
+<meta name="description" content="ステラーゴ網干SC U-15へのお問い合わせページです。">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a href="index.html" class="brand">
+      <span>
+        ステラーゴ網干SC U-15
+        <span class="en">STELLAGO ABOSHI SC</span>
+      </span>
+    </a>
+    <button class="nav-toggle" aria-label="メニュー">&#9776;</button>
+    <nav class="nav">
+      <a href="index.html">ホーム</a>
+      <a href="about.html">クラブ概要</a>
+      <a href="news.html">お知らせ</a>
+      <a href="recruit.html">入団募集</a>
+      <a href="contact.html" aria-current="page">お問い合わせ</a>
+    </nav>
+  </div>
+</header>
+
+<section class="page-hero">
+  <div class="wrap">
+    <h1>お問い合わせ</h1>
+    <p>入団・練習会・パートナーシップに関するご相談はお気軽に</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="contact-info">
+      <div class="card">
+        <div class="label">お電話</div>
+        <div class="value"><a href="tel:08085174021">080-8517-4021</a></div>
+      </div>
+      <div class="card">
+        <div class="label">メール</div>
+        <div class="value" style="font-size:0.92rem;"><a href="mailto:stellago.sc.u15@gmail.com">stellago.sc.u15@gmail.com</a></div>
+      </div>
+      <div class="card">
+        <div class="label">公式Instagram</div>
+        <div class="value"><a href="https://www.instagram.com/stellago_u15/" target="_blank" rel="noopener">@stellago_u15</a></div>
+      </div>
+    </div>
+
+    <div class="section-head">
+      <span class="en">CONTACT FORM</span>
+      <h2>お問い合わせフォーム</h2>
+      <p>下記フォームよりご連絡ください。折り返しスタッフよりご連絡いたします。</p>
+    </div>
+
+    <form class="contact-form" action="https://formsubmit.co/stellago.sc.u15@gmail.com" method="POST">
+      <input type="hidden" name="_subject" value="【HPより】お問い合わせ">
+      <input type="hidden" name="_template" value="table">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_next" value="contact.html?sent=1">
+
+      <div class="form-row">
+        <label for="name">お名前<span class="required">必須</span></label>
+        <input type="text" id="name" name="お名前" required>
+      </div>
+      <div class="form-row">
+        <label for="email">メールアドレス<span class="required">必須</span></label>
+        <input type="email" id="email" name="メールアドレス" required>
+      </div>
+      <div class="form-row">
+        <label for="tel">電話番号</label>
+        <input type="tel" id="tel" name="電話番号">
+      </div>
+      <div class="form-row">
+        <label for="category">お問い合わせ種別<span class="required">必須</span></label>
+        <select id="category" name="お問い合わせ種別" required>
+          <option value="">選択してください</option>
+          <option value="入団・練習会について">入団・練習会について</option>
+          <option value="パートナーシップについて">パートナーシップについて</option>
+          <option value="その他">その他</option>
+        </select>
+      </div>
+      <div class="form-row">
+        <label for="message">お問い合わせ内容<span class="required">必須</span></label>
+        <textarea id="message" name="お問い合わせ内容" required></textarea>
+      </div>
+      <div class="form-row text-center">
+        <button type="submit" class="btn btn-primary">送信する</button>
+      </div>
+    </form>
+
+    <p class="small-note text-center" style="margin-top:20px;">※フォーム初回設定時、送信先メールアドレス宛に確認メールが届きます。届いたメール内のリンクを開いて有効化してください。</p>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="foot-top">
+      <div>
+        <div class="foot-brand">ステラーゴ網干SC U-15</div>
+        <div>兵庫県姫路市網干区新在家246(網干南公園グラウンド)</div>
+      </div>
+      <nav class="foot-nav">
+        <a href="index.html">ホーム</a>
+        <a href="about.html">クラブ概要</a>
+        <a href="news.html">お知らせ</a>
+        <a href="recruit.html">入団募集</a>
+        <a href="contact.html">お問い合わせ</a>
+      </nav>
+    </div>
+    <div class="foot-bottom">&copy; 2026 ステラーゴ網干SC U-15</div>
+  </div>
+</footer>
+
+<script src="assets/js/main.js"></script>
+</body>
+</html>
