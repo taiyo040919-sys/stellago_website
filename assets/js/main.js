@@ -5,6 +5,21 @@ document.addEventListener("DOMContentLoaded", () => {
     toggle.addEventListener("click", () => nav.classList.toggle("open"));
   }
 
+  // 2027年度 入団申込フォームの公開ゲート(2026-09-01以降に表示)
+  const applyOpenDate = new Date("2026-09-01T00:00:00+09:00");
+  const applyPending = document.querySelector("[data-apply-pending]");
+  const applyOpen = document.querySelector("[data-apply-open]");
+  if (applyPending && applyOpen) {
+    if (new Date() >= applyOpenDate) {
+      applyPending.style.display = "none";
+      applyOpen.style.display = "";
+      // TODO: フォームURL発行後、recruit.html内の [data-apply-form-link] のhref="#" を実際のURLに差し替えること
+    } else {
+      applyPending.style.display = "";
+      applyOpen.style.display = "none";
+    }
+  }
+
   const newsContainers = document.querySelectorAll("[data-news-list]");
   if (newsContainers.length) {
     fetch("assets/data/news.json")
