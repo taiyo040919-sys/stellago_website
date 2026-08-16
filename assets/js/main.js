@@ -13,7 +13,6 @@ document.addEventListener("DOMContentLoaded", () => {
     if (new Date() >= applyOpenDate) {
       applyPending.style.display = "none";
       applyOpen.style.display = "";
-      // TODO: フォームURL発行後、recruit.html内の [data-apply-form-link] のhref="#" を実際のURLに差し替えること
     } else {
       applyPending.style.display = "";
       applyOpen.style.display = "none";
