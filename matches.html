@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>お知らせ | ステラーゴ網干SC U-15</title>
-<meta name="description" content="ステラーゴ網干SC U-15からのお知らせ一覧です。">
+<title>試合情報 | ステラーゴ網干SC U-15</title>
+<meta name="description" content="ステラーゴ網干SC U-15の今後の試合予定と、これまでの試合結果です。">
 <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
@@ -22,8 +22,8 @@
     <nav class="nav">
       <a href="index.html">ホーム</a>
       <a href="about.html">クラブ概要</a>
-      <a href="news.html" aria-current="page">お知らせ</a>
-      <a href="matches.html">試合情報</a>
+      <a href="news.html">お知らせ</a>
+      <a href="matches.html" aria-current="page">試合情報</a>
       <a href="recruit.html">入団募集</a>
       <a href="contact.html">お問い合わせ</a>
     </nav>
@@ -32,14 +32,28 @@
 
 <section class="page-hero">
   <div class="wrap">
-    <h1>お知らせ</h1>
-    <p>練習会・入団募集などの最新情報</p>
+    <h1>試合情報</h1>
+    <p>今後の試合予定と、これまでの試合結果</p>
   </div>
 </section>
 
 <section class="section">
   <div class="wrap">
-    <div class="news-list" data-news-list="all"></div>
+    <div class="section-head">
+      <span class="en">SCHEDULE</span>
+      <h2>今後の試合予定</h2>
+    </div>
+    <div class="match-list" data-match-list="upcoming" data-match-limit="all"></div>
+  </div>
+</section>
+
+<section class="section section-alt">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="en">RESULTS</span>
+      <h2>試合結果</h2>
+    </div>
+    <div class="match-list" data-match-list="results" data-match-limit="all"></div>
   </div>
 </section>
 

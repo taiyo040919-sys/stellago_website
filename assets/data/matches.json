@@ -1,0 +1,74 @@
+{
+  "upcoming": [
+    {
+      "date": "2026-08-22",
+      "competition": "トレーニングマッチ",
+      "opponent": "アクロス / EVOLVE",
+      "venue": "福部未来学園運動場(鳥取県鳥取市福部町高江)",
+      "kickoff": "14:35〜vsアクロス / 15:15〜vsEVOLVE / 16:25〜vsアクロス / 17:00〜vsEVOLVE",
+      "note": "25分×4本"
+    },
+    {
+      "date": "2026-08-23",
+      "competition": "トレーニングマッチ",
+      "opponent": "アクロス / EVOLVE",
+      "venue": "福部未来学園運動場(鳥取県鳥取市福部町高江)",
+      "kickoff": "12:30〜vsEVOLVE / 13:05〜vsアクロス / 14:25〜vsEVOLVE / 15:00〜vsアクロス",
+      "note": "25分×4本"
+    },
+    {
+      "date": "2026-08-29",
+      "competition": "兵庫県U-13ルーキーリーグ3部C",
+      "opponent": "龍野FC",
+      "venue": "たつの市祇園公園",
+      "kickoff": "9:00キックオフ予定",
+      "note": "詳細は決まり次第お知らせします"
+    },
+    {
+      "date": "2026-09-05",
+      "competition": "兵庫県U-13ルーキーリーグ3部C",
+      "opponent": "伊丹東・北",
+      "venue": "猪名川第3運動場B(兵庫県伊丹市)",
+      "kickoff": "時間未定",
+      "note": "詳細は決まり次第お知らせします"
+    }
+  ],
+  "results": [
+    {
+      "date": "2026-08-11",
+      "competition": "兵庫県U-13ルーキーリーグ3部C 第4節",
+      "opponent": "マリノFC B",
+      "venue": "垂水スポーツガーデン(アウェイ)",
+      "scoreFor": 2,
+      "scoreAgainst": 3,
+      "result": "LOSE"
+    },
+    {
+      "date": "2026-08-08",
+      "competition": "兵庫県U-13ルーキーリーグ3部C 第3節",
+      "opponent": "ミレFC",
+      "venue": "網干南公園(ホーム)",
+      "scoreFor": 3,
+      "scoreAgainst": 0,
+      "result": "WIN"
+    },
+    {
+      "date": "2026-08-01",
+      "competition": "兵庫県U-13ルーキーリーグ3部C 第2節",
+      "opponent": "明倫クラブ",
+      "venue": "網干南公園(ホーム)",
+      "scoreFor": 1,
+      "scoreAgainst": 0,
+      "result": "WIN"
+    },
+    {
+      "date": "2026-07-11",
+      "competition": "兵庫県U-13ルーキーリーグ3部C 第1節",
+      "opponent": "ラソボーラFC",
+      "venue": "小野希望の丘陸上競技場アレオ(アウェイ)",
+      "scoreFor": 0,
+      "scoreAgainst": 1,
+      "result": "LOSE"
+    }
+  ]
+}
