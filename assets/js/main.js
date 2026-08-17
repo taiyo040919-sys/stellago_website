@@ -19,6 +19,39 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
+  // トップページ hero: 写真スライドショー(assets/data/hero-photos.jsonを編集するだけで写真を追加・入替可能)
+  const heroSlides = document.querySelector("[data-hero-slides]");
+  if (heroSlides) {
+    fetch("assets/data/hero-photos.json")
+      .then((res) => res.json())
+      .then((photos) => {
+        if (!Array.isArray(photos) || !photos.length) return;
+        photos.forEach((photo, i) => {
+          const slide = document.createElement("div");
+          slide.className = "hero-slide" + (i === 0 ? " is-active" : "");
+          slide.style.backgroundImage = `url('${photo.src}')`;
+          slide.setAttribute("role", "img");
+          slide.setAttribute("aria-label", photo.alt || "");
+          heroSlides.appendChild(slide);
+        });
+        const reduceMotion = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+        if (photos.length > 1 && !reduceMotion) {
+          const slideEls = heroSlides.querySelectorAll(".hero-slide");
+          let current = 0;
+          setInterval(() => {
+            slideEls[current].classList.remove("is-active");
+            current = (current + 1) % slideEls.length;
+            slideEls[current].classList.add("is-active");
+          }, 5000);
+        }
+      })
+      .catch(() => {
+        heroSlides.style.backgroundImage = "url('assets/img/photo-dribble.jpg')";
+        heroSlides.style.backgroundSize = "cover";
+        heroSlides.style.backgroundPosition = "center";
+      });
+  }
+
   const newsContainers = document.querySelectorAll("[data-news-list]");
   if (newsContainers.length) {
     fetch("assets/data/news.json")
