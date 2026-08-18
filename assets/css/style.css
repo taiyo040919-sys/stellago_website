@@ -24,6 +24,8 @@
   --shadow: 0 16px 40px rgba(18, 16, 12, 0.10);
   --shadow-sm: 0 8px 22px rgba(18, 16, 12, 0.08);
   --ease: cubic-bezier(0.16, 0.84, 0.44, 1);
+  /* 英字の大見出し用ディスプレイフォント(Barlow Condensed)。日本語文字は自動でフォールバック */
+  --font-display: "Barlow Condensed", "Helvetica Neue", Arial, "Hiragino Sans", "Noto Sans JP", sans-serif;
 }
 
 * { box-sizing: border-box; }
@@ -252,7 +254,7 @@ a { color: inherit; text-decoration: none; }
   line-height: 1.02;
   margin: 0 0 28px;
   text-transform: uppercase;
-  font-family: "Helvetica Neue", Arial, "Hiragino Sans", sans-serif;
+  font-family: var(--font-display);
 }
 .hero-brandwords span { white-space: nowrap; }
 .hero-brandwords .slash { color: var(--color-gold-light); font-weight: 400; opacity: 0.7; }
@@ -361,7 +363,7 @@ a { color: inherit; text-decoration: none; }
   color: var(--color-ink);
   line-height: 1;
   text-transform: uppercase;
-  font-family: "Helvetica Neue", Arial, "Hiragino Sans", sans-serif;
+  font-family: var(--font-display);
 }
 .section-top .ja { font-size: 0.86rem; color: var(--color-ink-soft); letter-spacing: 0.06em; }
 .section-top p { flex-basis: 100%; margin: 0; color: var(--color-ink-soft); font-size: 0.9rem; }
@@ -384,16 +386,6 @@ a { color: inherit; text-decoration: none; }
 .view-all:hover .arrow { transform: translateX(3px); }
 .section-dark .view-all { color: var(--color-white); border-color: rgba(255,255,255,0.5); }
 .section-dark .view-all:hover { color: var(--color-gold-light); border-color: var(--color-gold-light); }
-
-/* ------------------------------------------------------------------ */
-/* Scroll reveal                                                       */
-/* ------------------------------------------------------------------ */
-[data-reveal] {
-  opacity: 0;
-  transform: translateY(22px);
-  transition: opacity 0.7s var(--ease), transform 0.7s var(--ease);
-}
-[data-reveal].is-visible { opacity: 1; transform: translateY(0); }
 
 /* ------------------------------------------------------------------ */
 /* Cards / grid                                                        */
@@ -445,7 +437,7 @@ a { color: inherit; text-decoration: none; }
 }
 .pillar-card:hover { transform: translateY(-4px); box-shadow: var(--shadow); border-color: var(--color-gold); }
 .pillar-card .pillar-index { font-size: 0.72rem; letter-spacing: 0.14em; color: var(--color-gold-deep); font-weight: 700; margin-bottom: 14px; }
-.pillar-card h3 { font-size: 1.5rem; margin: 0 0 10px; letter-spacing: 0.02em; color: var(--color-ink); font-family: "Helvetica Neue", Arial, "Hiragino Sans", sans-serif; }
+.pillar-card h3 { font-size: 1.5rem; margin: 0 0 10px; letter-spacing: 0.02em; color: var(--color-ink); font-family: var(--font-display); }
 .pillar-card p { margin: 0; color: var(--color-ink-soft); font-size: 0.9rem; }
 @media (max-width: 760px) { .pillar-grid { grid-template-columns: 1fr; } }
 
@@ -479,7 +471,7 @@ a { color: inherit; text-decoration: none; }
   font-size: 1.1rem;
   letter-spacing: 0.03em;
   text-transform: uppercase;
-  font-family: "Helvetica Neue", Arial, "Hiragino Sans", sans-serif;
+  font-family: var(--font-display);
 }
 .tile-link .tile-label .txt .ja { font-size: 0.76rem; color: rgba(255,255,255,0.6); margin-top: 2px; display: block; }
 .tile-link .tile-label .chev { color: var(--color-gold-light); font-size: 1.2rem; transition: transform 0.25s var(--ease); }
@@ -671,7 +663,7 @@ a { color: inherit; text-decoration: none; }
   font-weight: 800;
   color: var(--color-gold-light);
   letter-spacing: 0.02em;
-  font-family: "Helvetica Neue", Arial, sans-serif;
+  font-family: var(--font-display);
 }
 .ticker-card .ticker-result {
   display: inline-block;

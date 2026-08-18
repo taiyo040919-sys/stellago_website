@@ -3,9 +3,16 @@ document.addEventListener("DOMContentLoaded", () => {
   const toggle = document.querySelector(".nav-toggle");
   const nav = document.querySelector(".nav");
   if (toggle && nav) {
-    toggle.addEventListener("click", () => nav.classList.toggle("open"));
+    toggle.setAttribute("aria-expanded", "false");
+    toggle.addEventListener("click", () => {
+      const isOpen = nav.classList.toggle("open");
+      toggle.setAttribute("aria-expanded", String(isOpen));
+    });
     nav.querySelectorAll("a").forEach((a) => {
-      a.addEventListener("click", () => nav.classList.remove("open"));
+      a.addEventListener("click", () => {
+        nav.classList.remove("open");
+        toggle.setAttribute("aria-expanded", "false");
+      });
     });
   }
 
@@ -82,7 +89,7 @@ document.addEventListener("DOMContentLoaded", () => {
           container.innerHTML = list
             .map(
               (item) => `
-            <article class="news-card" data-reveal>
+            <article class="news-card">
               <div class="news-card-top">
                 <span class="tag-label">${item.tag}</span>
                 <time datetime="${item.date}">${item.date.replace(/-/g, ".")}</time>
@@ -92,7 +99,6 @@ document.addEventListener("DOMContentLoaded", () => {
             </article>`
             )
             .join("");
-          initReveal(container.querySelectorAll("[data-reveal]"));
         });
       })
       .catch(() => {
@@ -153,7 +159,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const dateLabel = m.date.replace(/-/g, ".");
     if (kind === "upcoming") {
       return `
-        <div class="match-item" data-reveal>
+        <div class="match-item">
           <time datetime="${m.date}">${dateLabel}</time>
           <div class="match-body">
             <span class="tag-label">${m.competition}</span>
@@ -166,7 +172,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const resultClass = m.result === "WIN" ? "win" : m.result === "LOSE" ? "lose" : "draw";
     const resultLabel = m.result === "WIN" ? "勝" : m.result === "LOSE" ? "敗" : "分";
     return `
-      <div class="match-item" data-reveal>
+      <div class="match-item">
         <time datetime="${m.date}">${dateLabel}</time>
         <div class="match-body">
           <span class="tag-label">${m.competition}</span>
@@ -182,7 +188,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const dateLabel = m.date.replace(/-/g, ".");
     if (kind === "upcoming") {
       return `
-        <div class="ticker-card" data-reveal>
+        <div class="ticker-card">
           <span class="ticker-kicker">${kicker}</span>
           <span class="ticker-date">${dateLabel}｜${m.competition}</span>
           <span class="ticker-opponent">vs ${m.opponent}</span>
@@ -192,7 +198,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const resultClass = m.result === "WIN" ? "win" : m.result === "LOSE" ? "lose" : "draw";
     const resultLabel = m.result === "WIN" ? "WIN" : m.result === "LOSE" ? "LOSE" : "DRAW";
     return `
-      <div class="ticker-card" data-reveal>
+      <div class="ticker-card">
         <span class="ticker-kicker">${kicker}</span>
         <span class="ticker-date">${dateLabel}｜${m.competition}</span>
         <span class="ticker-opponent">vs ${m.opponent}</span>
@@ -232,26 +238,4 @@ document.addEventListener("DOMContentLoaded", () => {
           </div>`;
       });
   }
-
-  // スクロールで要素をふわっと表示(シンプルな演出)
-  function initReveal(elements) {
-    const els = elements || document.querySelectorAll("[data-reveal]:not(.is-visible)");
-    if (!("IntersectionObserver" in window) || !els.length) {
-      els.forEach((el) => el.classList.add("is-visible"));
-      return;
-    }
-    const io = new IntersectionObserver(
-      (entries, observer) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("is-visible");
-            observer.unobserve(entry.target);
-          }
-        });
-      },
-      { threshold: 0.12, rootMargin: "0px 0px -40px 0px" }
-    );
-    els.forEach((el) => io.observe(el));
-  }
-  initReveal(document.querySelectorAll("[data-reveal]"));
 });
